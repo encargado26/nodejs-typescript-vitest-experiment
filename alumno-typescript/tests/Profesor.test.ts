@@ -7,4 +7,24 @@ describe("Profesor", () => {
     expect(profe.nombre).toBe("Carlos");
     expect(profe.legajo).toBe(789);
   });
+
+  test("el legajo se asigna correctamente", () => {
+    const profe = new Profesor("Laura", 101);
+    expect(profe.legajo).toBe(101);
+  });
+
+  test("el nombre se asigna correctamente", () => {
+    const profe = new Profesor("María", 202);
+    expect(profe.nombre).toBe("María");
+  });
+
+  test("un profesor con legajo cero se guarda correctamente", () => {
+    const profe = new Profesor("Nuevo", 0);
+    expect(profe.legajo).toBe(0);
+  });
+
+  test("un profesor con nombre vacío se guarda correctamente", () => {
+    const profe = new Profesor("", 303);
+    expect(profe.nombre).toBe("");
+  });
 });
