@@ -4,10 +4,11 @@ export class Alumno {
     public edad: number
   ) {}
 
-  esMayorDeEdad(): boolean {
+  public esMayorDeEdad(): boolean {
     return this.edad >= 18;
   }
-  obtenerEstado(): string {
+
+  public obtenerEstado(): string {
     return this.esMayorDeEdad() ? "Mayor de edad" : "Menor de edad";
-  } 
+  }
 }
