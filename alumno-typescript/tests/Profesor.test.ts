@@ -27,4 +27,10 @@ describe("Profesor", () => {
     const profe = new Profesor("", 303);
     expect(profe.nombre).toBe("");
   });
+
+  test("dos profesores distintos deben tener legajos diferentes", () => {
+    const profe1 = new Profesor("Carlos", 111);
+    const profe2 = new Profesor("Laura", 222);
+    expect(profe1.legajo).not.toBe(profe2.legajo);
+  });
 });
