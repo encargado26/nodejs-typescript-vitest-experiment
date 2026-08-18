@@ -1,10 +1,8 @@
 export class Alumno {
-  legajo(legajo: any) {
-    throw new Error("Method not implemented.");
-  }
   constructor(
     public nombre: string,
-    public edad: number
+    public edad: number,
+    public legajo: number  
   ) {}
 
   public esMayorDeEdad(): boolean {
