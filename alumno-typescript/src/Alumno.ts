@@ -1,4 +1,7 @@
 export class Alumno {
+  legajo(legajo: any) {
+    throw new Error("Method not implemented.");
+  }
   constructor(
     public nombre: string,
     public edad: number

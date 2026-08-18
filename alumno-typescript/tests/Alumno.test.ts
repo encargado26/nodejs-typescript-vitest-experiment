@@ -2,31 +2,37 @@ import { describe, expect, test } from "vitest";
 import { Alumno } from "../src/Alumno";
 
 describe("Alumno", () => {
-
   test("un alumno de 18 años debe ser mayor de edad", () => {
-    // Arrange
     const alumno = new Alumno("Juan", 18);
-
-    // Act
-    const resultado = alumno.esMayorDeEdad();
-
-    // Assert
-    expect(resultado).toBe(true);
-  });
-
-  test("un alumno de 17 años debe ser menor de edad", () => {
-    const alumno = new Alumno("Pedro", 17);
-    expect(alumno.esMayorDeEdad()).toBe(false);
-  });
-
-  test("obtenerEstado devuelve 'Mayor de edad' para 25 años", () => {
-    const alumno = new Alumno("Ana", 25);
+    expect(alumno.esMayorDeEdad()).toBe(true);
     expect(alumno.obtenerEstado()).toBe("Mayor de edad");
   });
 
-  test("obtenerEstado devuelve 'Menor de edad' para 15 años", () => {
-    const alumno = new Alumno("Luis", 15);
+  test("un alumno de 17 años debe ser menor de edad", () => {
+    const alumno = new Alumno("Ana", 17);
+    expect(alumno.esMayorDeEdad()).toBe(false);
     expect(alumno.obtenerEstado()).toBe("Menor de edad");
   });
 
+  test("un alumno de 0 años debe ser menor de edad", () => {
+    const alumno = new Alumno("Bebé", 0);
+    expect(alumno.esMayorDeEdad()).toBe(false);
+    expect(alumno.obtenerEstado()).toBe("Menor de edad");
+  });
+
+  test("un alumno de 120 años sigue siendo mayor de edad", () => {
+    const alumno = new Alumno("Anciano", 120);
+    expect(alumno.esMayorDeEdad()).toBe(true);
+    expect(alumno.obtenerEstado()).toBe("Mayor de edad");
+  });
+
+  test("el legajo se guarda correctamente", () => {
+    const alumno = new Alumno("Pedro", 25);
+    expect(alumno.legajo).toBe(202);
+  });
+
+  test("el nombre se guarda correctamente", () => {
+    const alumno = new Alumno("Lucía", 19);
+    expect(alumno.nombre).toBe("Lucía");
+  });
 });
