@@ -7,4 +7,7 @@ export class Alumno {
   esMayorDeEdad(): boolean {
     return this.edad >= 18;
   }
+  obtenerEstado(): string {
+    return this.esMayorDeEdad() ? "Mayor de edad" : "Menor de edad";
+  } 
 }
