@@ -15,7 +15,7 @@ describe("Alumno", () => {
   });
 
   test("un alumno de 0 años debe ser menor de edad", () => {
-    const alumno = new Alumno("Bebé", 0, 789);
+    const alumno = new Alumno("Bebe", 0, 789);
     expect(alumno.esMayorDeEdad()).toBe(false);
     expect(alumno.obtenerEstado()).toBe("Menor de edad");
   });
